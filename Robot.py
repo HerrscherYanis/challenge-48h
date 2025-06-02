@@ -7,8 +7,9 @@ class Robot(Wheel):
         Wheel.__init__(wheel_Left_Back, wheel_Right_Back, wheel_Left_Prior, wheel_Right_Prior)
 
     def Addon(self, add_class):
+        #add other sensore in Robot.
         self.addon = {add_class.name : add_class}
-        
+
     def order_robot(self, direction):
         if direction is "Forward":
             self.move(1, 1)
@@ -18,5 +19,7 @@ class Robot(Wheel):
             self.move(-1, 1)
         elif direction is "right":
             self.move(1, -1)
+        elif direction is "stop" or direction is None:
+            self.move(0, 0)
         
         
