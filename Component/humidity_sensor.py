@@ -1,5 +1,6 @@
 from machine import Pin
 import dht
+
 class humidity():
     def __init__(self, sensor):
         self.sensor = dht.DHT11(Pin(sensor))
