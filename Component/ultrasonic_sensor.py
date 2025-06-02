@@ -31,8 +31,9 @@ class HCSR04:
         return cms
 
 
-class ultrasonic():
-    def __init__(self, trigger, echo, echo_timeout_us=10000):
+class Ultrasonic():
+    def __init__(self,name, trigger, echo, echo_timeout_us=10000):
+        self.name = name
         self.sensor = HCSR04(trigger, echo, echo_timeout_us)
     
     def request_ultrasonic(self):
