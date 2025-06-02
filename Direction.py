@@ -17,3 +17,15 @@ class Robot(Component):
         self.wheel_Right.value(Value_Right)
         self.wheel_Left.value(Value_Left)
         self.wheel_Right.value(Value_Right)
+
+    def Commend_Robot(self, direction):
+        if direction is "Forward":
+            self.move(1, 1)
+        elif direction is "backward":
+            self.move(-1, -1)
+        elif direction is "left":
+            self.move(-1, 1)
+        elif direction is "right":
+            self.move(1, -1)
+        
+        
