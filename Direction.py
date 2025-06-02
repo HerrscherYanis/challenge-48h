@@ -1,8 +1,9 @@
 from machine import Pin
 
 class Component():
-    def __init__(self, pin):
-        self.pin = pin
+    def __init__(self, wheel_Left, wheel_Right):
+        self.wheel_Left = wheel_Left
+        self.wheel_Right = wheel_Right
 
 class Robot(Component):
     def __init__(self,pin):
@@ -10,4 +11,5 @@ class Robot(Component):
 
     
     def move(self, value):
-        self.pin.value(1)
+        self.wheel_Left.value(value)
+        self.wheel_Right.value(value)
