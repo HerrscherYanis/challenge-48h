@@ -3,7 +3,7 @@ from Component.ultrasonic_sensor import Ultrasonic
 from Component.humidity_sensor import Humidity
 
 class Robot(Wheel, Ultrasonic, Humidity):
-    def __init__(self, pin_wheel, pin_sonic = None, pin_humidity=None):
+    def __init__(self, pin_wheel, pin_sonic, pin_humidity=None):
         Wheel.__init__(self, pin_wheel[0], pin_wheel[1], pin_wheel[2], pin_wheel[3])
         self.Addon(pin_sonic, pin_humidity)
 
@@ -11,11 +11,11 @@ class Robot(Wheel, Ultrasonic, Humidity):
         #add other sensore in Robot.
         #self.addon = {add_class.name : add_class}
         try:
-            Ultrasonic.__init__(pin_sonic[0],pin_sonic[1])
+            Ultrasonic.__init__(self, pin_sonic[0],pin_sonic[1])
         except:
             print("module UltraSonic sensor not found !")
         try:
-            Humidity.__init__(pin_sonic)
+            Humidity.__init__(self, pin_sonic)
         except:
             print("module Humidity sensor not found !")
 
@@ -32,7 +32,7 @@ class Robot(Wheel, Ultrasonic, Humidity):
             self.move(0, 0)
 
     def Tourne(self, number):
-        distance = self.UltraSonic.request_ultrasonic()
+        distance = self.request_ultrasonic()
         if distance <= 8.0 and distance > 0:
             self.order_robot("right")
             if distance > 8.0 or distance < 0:

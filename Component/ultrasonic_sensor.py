@@ -32,10 +32,10 @@ class HCSR04:
         return cms
 
 
-class Ultrasonic():
+class Ultrasonic(HCSR04):
     def __init__(self, trigger, echo, echo_timeout_us=10000):
-        self.sensor = HCSR04(trigger, echo, echo_timeout_us)
+        HCSR04.__init__(self, trigger, echo, echo_timeout_us)
     
     def request_ultrasonic(self):
-        distance = self.sensor.distance_cm()
+        distance = self.distance_cm()
         return distance

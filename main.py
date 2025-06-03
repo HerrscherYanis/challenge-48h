@@ -9,7 +9,7 @@ robot = Robot(10,11,5,6,Ultrasonic(19,18),Humidity(12))
 if __name__ == "__main__":
     number = 0
     while True:
-        distance = robot.UltraSonic.request_ultrasonic()
+        distance = robot.request_ultrasonic()
         if distance <= 8.0 and distance > 0:
             number = robot.Tourne(number)
         else:
