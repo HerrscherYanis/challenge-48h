@@ -1,4 +1,5 @@
-from machine import Pin, time
+import machine, time
+from machine import Pin
 
 class HCSR04:
     #Roberto Sánchez
@@ -32,12 +33,9 @@ class HCSR04:
 
 
 class Ultrasonic():
-    def __init__(self,name, trigger, echo, echo_timeout_us=10000):
-        self.name = name
+    def __init__(self, trigger, echo, echo_timeout_us=10000):
         self.sensor = HCSR04(trigger, echo, echo_timeout_us)
     
     def request_ultrasonic(self):
         distance = self.sensor.distance_cm()
-        print('Distance:', distance, 'cm')
-        if distance <= 8.0 and distance > 0:
-            print("je m'arrête")
+        return distance
