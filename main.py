@@ -4,9 +4,9 @@ from Humidity_sensor import Humidity
 from Robot import Robot
 from time import sleep
 
-robot = Robot([10,11,5,6],[19,18],None)
 
 if __name__ == "__main__":
+    robot = Robot()
     number = 0
     while True:
         distance = robot.request_ultrasonic()
