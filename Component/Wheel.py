@@ -10,5 +10,5 @@ class Wheel():
     def move(self, pin1, pin2):
         self.wheel_Left_back.value(pin1[1])
         self.wheel_Right_back.value(pin1[0])
-        self.wheel_Left_Prior.value(pin2[0])
-        self.wheel_Right_Prior.value(pin2[1])
+        self.wheel_Left_Prior.value(pin2[1])
+        self.wheel_Right_Prior.value(pin2[0])

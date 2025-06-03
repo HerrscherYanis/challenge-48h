@@ -4,7 +4,7 @@ from Component.humidity_sensor import Humidity
 from Robot import Robot
 from time import sleep
 
-robot = Robot(10,11,5,6,Ultrasonic(19,18),Humidity(12))
+robot = Robot([10,11,5,6],[19,18],None)
 
 if __name__ == "__main__":
     number = 0
