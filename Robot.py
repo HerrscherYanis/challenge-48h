@@ -33,10 +33,8 @@ class Robot(Wheel, Ultrasonic, Humidity):
 
     def Tourne(self, number):
         distance = self.request_ultrasonic()
-        if distance <= 8.0 and distance > 0 and number <= 10:
+        if distance <= 8.0 and distance > 0 and number <= 25:
             self.order_robot("right")
-            if distance > 8.0 or distance < 0:
-                self.order_robot("forward")
-        elif number > 10:
+        else:
             self.order_robot("left")
         return number + 1
