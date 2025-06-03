@@ -1,6 +1,6 @@
-from Component.Wheel import Wheel
-from Component.ultrasonic_sensor import Ultrasonic
-from Component.humidity_sensor import Humidity
+from Wheel import Wheel
+from Ultrasonic_sensor import Ultrasonic
+from Humidity_sensor import Humidity
 
 class Robot(Wheel, Ultrasonic, Humidity):
     def __init__(self, pin_wheel, pin_sonic, pin_humidity=None):

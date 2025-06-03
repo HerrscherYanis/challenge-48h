@@ -1,6 +1,6 @@
-from Component.Wheel import Wheel
-from Component.ultrasonic_sensor import Ultrasonic
-from Component.humidity_sensor import Humidity
+from Wheel import Wheel
+from Ultrasonic_sensor import Ultrasonic
+from Humidity_sensor import Humidity
 from Robot import Robot
 from time import sleep
 
